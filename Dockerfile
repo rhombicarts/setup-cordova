@@ -1,6 +1,7 @@
 FROM runmymind/docker-android-sdk:alpine-standalone
 
-RUN apk update && apk upgrade && \
+RUN apk add alpine-baselayout=3.2.0-r22 && \
+    apk update && apk upgrade && \
     apk del openjdk11 && \
     apk add --force-overwrite gradle npm openjdk8 && \
     npm config set unsafe-perm true && \
