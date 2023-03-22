@@ -1,7 +1,7 @@
-FROM runmymind/docker-android-sdk:alpine-standalone
+FROM runmymind/docker-android-sdk:ubuntu-standalone
 
-RUN apk update && apk upgrade && \
-    apk add --force-overwrite gradle npm && \
+RUN apt update && apt upgrade && \
+    apt-get install gradle npm && \
     echo "safe-perm=true" > ~/.npmrc && \
     npm install -g cordova
 
