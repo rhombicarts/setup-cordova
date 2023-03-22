@@ -1,6 +1,7 @@
 FROM runmymind/docker-android-sdk:ubuntu-standalone
 
 RUN apt update -y && apt upgrade -y && \
+    curl -sL https://deb.nodesource.com/setup_current.x | sudo -E bash - && \
     apt-get install -y nodejs gradle npm && \
     node -v && \
     echo "safe-perm=true" > ~/.npmrc && \
