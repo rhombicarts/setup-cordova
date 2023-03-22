@@ -1,8 +1,7 @@
 FROM runmymind/docker-android-sdk:ubuntu-standalone
 
 RUN apt update -y && apt upgrade -y && \
-    apt-get -f remove nodejs && \
-    apt-get -f remove npm && \
+    curl -sL https://deb.nodesource.com/setup_18.x | bash && \
     apt-get install -f -y nodejs gradle npm && \
     node -v && \
     echo "safe-perm=true" > ~/.npmrc && \
